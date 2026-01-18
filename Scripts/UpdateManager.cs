@@ -77,27 +77,27 @@ namespace Insthync.ManagedUpdating
         private void Update()
         {
             _defaultUpdater.Update();
-            foreach (var updater in _updaters.Values)
+            for (int i = 0; i < _updaters.Count; ++i)
             {
-                updater.Update();
+                _updaters.Values[i].Update();
             }
         }
 
         private void LateUpdate()
         {
             _defaultUpdater.LateUpdate();
-            foreach (var updater in _updaters.Values)
+            for (int i = 0; i < _updaters.Count; ++i)
             {
-                updater.LateUpdate();
+                _updaters.Values[i].LateUpdate();
             }
         }
 
         private void FixedUpdate()
         {
             _defaultUpdater.FixedUpdate();
-            foreach (var updater in _updaters.Values)
+            for (int i = 0; i < _updaters.Count; ++i)
             {
-                updater.FixedUpdate();
+                _updaters.Values[i].FixedUpdate();
             }
         }
     }
